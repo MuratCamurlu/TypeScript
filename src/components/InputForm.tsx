@@ -7,8 +7,13 @@ interface IInputForm {
 const InputForm: React.FC<IInputForm> = ({ addTodo }) => {
   const [task, setTask] = useState("");
   const handleClick = () => {
-    addTodo(task);
-    setTask("");
+    if (task.trim() !== "") {
+      addTodo(task);
+      setTask("");
+    } else {
+      alert("PLEASE ENTER A VALID VALUE");
+      setTask("");
+    }
   };
   return (
     <div className="input-form">
