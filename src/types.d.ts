@@ -6,3 +6,6 @@ interface TodoType {
 interface ITodoList {
   todos: TodoType[];
 }
+interface IListItem {
+  item: TodoType;
+}
